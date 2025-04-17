@@ -961,8 +961,9 @@ export default class PDFPage {
    * ```
    * @param text The text to be drawn.
    * @param options The options to be used when drawing the text.
+   * @return Returns the number of drawn text lines. 
    */
-  drawText(text: string, options: PDFPageDrawTextOptions = {}): void {
+  drawText(text: string, options: PDFPageDrawTextOptions = {}): number {
     assertIs(text, 'text', ['string']);
     assertOrUndefined(options.color, 'options.color', [[Object, 'Color']]);
     assertRangeOrUndefined(options.opacity, 'opacity.opacity', 0, 1);
@@ -1018,6 +1019,8 @@ export default class PDFPage {
       if (oldFont) this.setFont(oldFont);
       else this.resetFont();
     }
+
+    return lines.length;
   }
 
   /**
