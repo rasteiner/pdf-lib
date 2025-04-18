@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "build": "tsc && vite build",
+    "build": "tsc --noEmit && bun build src/index.ts --minify --outdir ./dist",
     "build:types": "tspc src/index.ts --declaration --emitDeclarationOnly --esModuleInterop --outDir dist"
   },
   "main": "dist/index.js",
@@ -23,7 +23,6 @@
     "add": "^2.0.6",
     "ts-patch": "^3.3.0",
     "typescript": "~5.7.2",
-    "typescript-transform-paths": "^3.5.5",
-    "vite": "^6.3.1"
+    "typescript-transform-paths": "^3.5.5"
   }
 }
