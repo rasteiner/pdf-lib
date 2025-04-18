@@ -1,0 +1,29 @@
+{
+  "name": "pdf-lib",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "build:types": "tspc src/index.ts --declaration --emitDeclarationOnly --esModuleInterop --outDir dist"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@pdf-lib/standard-fonts": "^1.0.0",
+    "@pdf-lib/upng": "^1.0.1",
+    "pako": "^2.1.0"
+  },
+  "devDependencies": {
+    "add": "^2.0.6",
+    "ts-patch": "^3.3.0",
+    "typescript": "~5.7.2",
+    "typescript-transform-paths": "^3.5.5",
+    "vite": "^6.3.1"
+  }
+}
